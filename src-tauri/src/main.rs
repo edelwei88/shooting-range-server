@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{AppHandle, LogicalSize, Manager, PhysicalSize, Size};
+use tauri::{AppHandle, LogicalSize, Manager, Size};
 
 fn main() {
     tauri::Builder::default()
@@ -19,8 +19,8 @@ fn href_auth(app: AppHandle) {
     main.set_title("Авторизация").expect("error: set_title()");
     main.set_resizable(false).expect("error: set_resizable()");
     main.set_size(Size::Logical(LogicalSize {
-        width: 400_f64,
-        height: 300_f64,
+        width: 400.0_f64,
+        height: 300.0_f64,
     }))
     .expect("error: set_size()");
     main.center().expect("error: center()");
@@ -37,8 +37,8 @@ fn href_main(app: AppHandle) {
         .expect("error: set_title()");
     main.set_resizable(true).expect("error: set_resizable()");
     main.set_size(Size::Logical(LogicalSize {
-        width: 1280_f64,
-        height: 720_f64,
+        width: 1280.0_f64,
+        height: 720.0_f64,
     }))
     .expect("error: set_size()");
     main.center().expect("error: center()");
