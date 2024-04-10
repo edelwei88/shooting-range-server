@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{AppHandle, Manager, PhysicalSize, Size};
+use tauri::{AppHandle, LogicalSize, Manager, PhysicalSize, Size};
 
 fn main() {
     tauri::Builder::default()
@@ -18,9 +18,9 @@ fn href_auth(app: AppHandle) {
     let main = app.get_window("main").unwrap();
     main.set_title("Авторизация").expect("error: set_title()");
     main.set_resizable(false).expect("error: set_resizable()");
-    main.set_size(Size::Physical(PhysicalSize {
-        width: 400,
-        height: 300,
+    main.set_size(Size::Logical(LogicalSize {
+        width: 400_f64,
+        height: 300_f64,
     }))
     .expect("error: set_size()");
     main.center().expect("error: center()");
@@ -36,9 +36,9 @@ fn href_main(app: AppHandle) {
     main.set_title("Информаионная система тира")
         .expect("error: set_title()");
     main.set_resizable(true).expect("error: set_resizable()");
-    main.set_size(Size::Physical(PhysicalSize {
-        width: 1280,
-        height: 720,
+    main.set_size(Size::Logical(LogicalSize {
+        width: 1280_f64,
+        height: 720_f64,
     }))
     .expect("error: set_size()");
     main.center().expect("error: center()");
